@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPlace - Ваш универсальный маркетплейс</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">🛍️</span>
+                    <span>MarketPlace</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Продавцам</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li id="auth-container">
+                        <a href="#" class="auth-btn" id="login-btn">Войти</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Добро пожаловать в MarketPlace</h1>
+            <p>Универсальная платформа для покупок и продаж с гарантией качества и безопасными сделками</p>
+            <a href="#" class="btn">Начать покупки</a>
+            <a href="#" class="btn btn-secondary" id="register-hero-btn">Зарегистрироваться</a>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Быстрая доставка</h3>
+                    <p>Доставка по всей стране от 1 дня с возможностью самовывоза</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Безопасные сделки</h3>
+                    <p>Гарантия возврата средств и защита от мошенничества</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Удобная оплата</h3>
+                    <p>Различные способы оплаты, включая онлайн-платежи и наложенный платеж</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Проверенные продавцы</h3>
+                    <p>Все продавцы проходят верификацию перед размещением товаров</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Мобильное приложение</h3>
+                    <p>Удобный интерфейс для покупок с вашего смартфона</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Простой возврат</h3>
+                    <p>Возврат товара в течение 14 дней без объяснения причин</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center; margin-bottom: 20px;">
+                <span class="logo-icon">🛍️</span>
+                <span>MarketPlace</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+                <li><a href="#">Помощь</a></li>
+                <li><a href="#">Вакансии</a></li>
+            </ul>
+            <p class="copyright">© 2023 MarketPlace. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно входа -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Вход в аккаунт</h3>
+            <div id="login-error" class="alert alert-error hidden"></div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Пароль</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="show-register">Регистрация</button>
+                    <button type="submit" class="btn">Войти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Регистрация</h3>
+            <div id="register-error" class="alert alert-error hidden"></div>
+            <div id="register-success" class="alert alert-success hidden">Регистрация прошла успешно! Теперь вы можете войти.</div>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-name">Имя</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Пароль</label>
+                    <input type="password" id="register-password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Подтвердите пароль</label>
+                    <input type="password" id="register-confirm-password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="show-login">Уже есть аккаунт</button>
+                    <button type="submit" class="btn">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    
+</body>
+</html>
